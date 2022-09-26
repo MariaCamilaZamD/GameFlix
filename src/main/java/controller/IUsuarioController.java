@@ -6,4 +6,6 @@ public interface IUsuarioController {
     
     public String register(String username, String contrasena, String nombre, String apellidos, String email, String celular, String direccion, double saldo, boolean premium);
     
+    public String pedir(String username);
+    
 }
