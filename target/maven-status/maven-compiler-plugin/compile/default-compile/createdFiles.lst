@@ -1,6 +1,8 @@
 beans\Usuario.class
+controller\UsuarioController.class
 beans\Videojuegos.class
 beans\Alquiler.class
+controller\IUsuarioController.class
 servlets\PruebaServlet.class
 test\OperacionesBD.class
 connection\DBConnection.class
