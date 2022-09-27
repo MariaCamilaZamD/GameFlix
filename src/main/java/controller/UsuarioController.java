@@ -6,6 +6,8 @@ import com.google.gson.Gson;
 
 import beans.Usuario;
 import connection.DBConnection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UsuarioController implements IUsuarioController {
 
@@ -98,8 +100,7 @@ public class UsuarioController implements IUsuarioController {
                 double saldo = rs.getDouble("saldo");
                 boolean premium = rs.getBoolean("premium");
 
-                Usuario usuario = new Usuario(username, contrasena,
-                        nombre, apellidos, email, celular, direccion, saldo, premium);
+                Usuario usuario = new Usuario(username, contrasena, nombre, apellidos, email, celular, direccion, saldo, premium);
 
                 return gson.toJson(usuario);
             }
@@ -112,4 +113,139 @@ public class UsuarioController implements IUsuarioController {
         return "false";
     }
 
+    @Override
+    public String modificar(String username, String nuevaContrasena, String nuevoNombre, String nuevosApellidos, String nuevoEmail, String nuevoCelular, String nuevaDireccion, double nuevoSaldo, boolean nuevoPremium) {
+        DBConnection con = new DBConnection();
+
+        String sql = "Update usuario set contrasena = '" + nuevaContrasena
+                + "', nombre = '" + nuevoNombre + "', "
+                + "apellidos = '" + nuevosApellidos + "', email = '"
+                + nuevoEmail + "', celular = " + nuevoCelular +"', direccion = " + nuevaDireccion + "', saldo = " + nuevoSaldo + ", premium = ";
+
+        if (nuevoPremium == true) {
+            sql += " 1 ";
+        } else {
+            sql += " 0 ";
+        }
+
+        sql += " where username = '" + username + "'";
+
+        try {
+
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql);
+
+            return "true";
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+
+        return "false";
+
+    }
+
+    @Override
+    public String verCopias(String username) {
+        DBConnection con = new DBConnection();
+        String sql = "Select id,count(*) as num_copias from alquiler where username = '"
+                + username + "' group by id;";
+
+        Map<Integer, Integer> copias = new HashMap<Integer, Integer>();
+
+        try {
+
+            Statement st = con.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                int num_copias = rs.getInt("num_copias");
+
+                copias.put(id, num_copias);
+            }
+
+            devolverVideojuegos(username, copias);
+
+            return "true";
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+
+        return "false";
+
+    }
+
+    @Override
+    public String devolverVideojuegos(String username, Map<Integer, Integer> copias) {
+        
+        DBConnection con = new DBConnection();
+
+        try {
+            for (Map.Entry<Integer, Integer> videojuego : copias.entrySet()) {
+                int id = videojuego.getKey();
+                int num_copias = videojuego.getValue();
+
+                String sql = "Update videojuego set copias = (Select copias + " + num_copias
+                        + " from videojuego where id = " + id + ") where id = " + id;
+
+                Statement st = con.getConnection().createStatement();
+                st.executeUpdate(sql);
+
+            }
+
+            this.eliminar(username);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+        return "false";
+    }
+    
+
+    @Override
+    public String eliminar(String username) {
+        DBConnection con = new DBConnection();
+
+        String sql1 = "Delete from alquiler where username = '" + username + "'";
+        String sql2 = "Delete from usuario where username = '" + username + "'";
+
+        try {
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql1);
+            st.executeUpdate(sql2);
+
+            return "true";
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+
+        return "false";
+    }
+
+    @Override
+    public String restarDinero(String username, double nuevoSaldo) {
+        DBConnection con = new DBConnection();
+        String sql = "Update usuario set saldo = " + nuevoSaldo + " where username = '" + username + "'";
+
+        try {
+
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql);
+
+            return "true";
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+
+        return "false";
+    }
 }

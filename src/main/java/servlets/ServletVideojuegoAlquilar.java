@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.UsuarioController;
+import controller.VideojuegoController;
 
 /**
- * Servlet implementation class ServletUsuarioLogin
+ * Servlet implementation class ServletVideojuegoAlquilar
  */
-@WebServlet("/ServletUsuarioLogin")
-public class ServletUsuarioLogin extends HttpServlet {
+@WebServlet("/ServletVideojuegoAlquilar")
+public class ServletVideojuegoAlquilar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletUsuarioLogin() {
+    public ServletVideojuegoAlquilar() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,27 +29,29 @@ public class ServletUsuarioLogin extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-        @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+                throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		VideojuegoController videojuego = new VideojuegoController();
 		
-		UsuarioController usuario = new UsuarioController();
+		int id = Integer.parseInt(request.getParameter("id"));
 		String username = request.getParameter("username");
-		String contrasena = request.getParameter("contrasena");
-		String result = usuario.login(username, contrasena);
+		
+		String videojuegoStr = videojuego.alquilar(id,username);
 		
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println(result);
+		out.println(videojuegoStr);
 		out.flush();
 		out.close();
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-        @Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+                throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

@@ -12,6 +12,7 @@ $(document).ready(function () {
         registrarUsuario();
     });
 
+
 });
 
 function autenticarUsuario() {
@@ -39,7 +40,6 @@ function autenticarUsuario() {
         }
     });
 }
-
 function registrarUsuario() {
 
     let username = $("#input-username").val();

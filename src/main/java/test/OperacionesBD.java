@@ -7,8 +7,8 @@ import java.sql.Statement;
 
 public class OperacionesBD {
     public static void main(String[] args) {
-        actualizarVideojuego(1,"Acción/Aventura");
-        //listarVideojuego();
+        //actualizarVideojuego(1,"Acción/Aventura");
+       listarVideojuego();
     }
     
     public static void actualizarVideojuego(int id, String genero){
