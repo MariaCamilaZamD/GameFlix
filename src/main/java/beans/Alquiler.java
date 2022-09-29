@@ -17,10 +17,6 @@ public class Alquiler {
         this.genero = genero;
     }
 
-    public Alquiler(int id, String titulo, Date fechaAlquiler, boolean novedad, String genero, String clasificacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     public int getId() {
         return id;
     }

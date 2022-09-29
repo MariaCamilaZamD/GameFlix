@@ -21,7 +21,7 @@ public class AlquilerController implements IAlquilerController {
 
         DBConnection con = new DBConnection();
 
-        String sql = "Select l.id, l.nombre, l.genero, l.clasificacion, l.novedad, a.fecha from videojuego l "
+        String sql = "Select l.id, l.nombre, l.genero, l.novedad, a.fecha from videojuego l "
                 + "inner join alquiler a on l.id = a.id inner join usuario u on a.username = u.username "
                 + "where a.username = '" + username + "'";
 
@@ -36,11 +36,10 @@ public class AlquilerController implements IAlquilerController {
                 int id = rs.getInt("id");
                 String nombre = rs.getString("nombre");
                 String genero = rs.getString("genero");
-                String clasificacion = rs.getString("clasificacion");
                 boolean novedad = rs.getBoolean("novedad");
-                Date fechaAlquiler = rs.getDate("fecha");
+                Date fecha = rs.getDate("fecha");
 
-                Alquiler alquiler = new Alquiler(id, nombre, fechaAlquiler, novedad, genero, clasificacion);
+                Alquiler alquiler = new Alquiler(id, nombre, fecha, novedad, genero);
 
                 alquileres.add(gson.toJson(alquiler));
             }

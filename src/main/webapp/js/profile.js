@@ -97,8 +97,8 @@ function mostrarHistorial(videojuegos) {
             if (videojuego.novedad) {
                 contenido += 'checked'
             }
-            contenido += '></td><td>' + videojuego.fechaAlquiler + '</td>' +
-                    '<td><button id="devolver-btn" onclick= "devolvervideojuego(' + videojuego.id 
+            contenido += '></td><td>' + videojuego.fecha + '</td>' +
+                    '<td><button id="devolver-btn" onclick= "devolverpelicula(' + videojuego.id 
                     + ');" class="btn btn-danger">Devolver videojuego</button></td></tr>';
 
         });
