@@ -16,9 +16,8 @@ import controller.UsuarioController;
  */
 @WebServlet("/ServletUsuarioModificar")
 public class ServletUsuarioModificar extends HttpServlet {
-
-    private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -27,46 +26,40 @@ public class ServletUsuarioModificar extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-     * response)
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        UsuarioController usuario = new UsuarioController();
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+                throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		UsuarioController usuario = new UsuarioController();
+		
+		String username = request.getParameter("username");
+		String contrasena = request.getParameter("contrasena");
+		String nombre = request.getParameter("nombre");
+		String apellidos = request.getParameter("apellidos");
+		String email = request.getParameter("email");
+		double saldo = Double.parseDouble(request.getParameter("saldo"));
+		boolean premium = Boolean.parseBoolean(request.getParameter("premium"));
+		
+		
+		String usuarioStr = usuario.modificar(username,contrasena,nombre,apellidos,
+                        email,saldo,premium);
+		
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println(usuarioStr);
+		out.flush();
+		out.close();
+	}
 
-        String username = request.getParameter("username");
-        String contrasena = request.getParameter("contrasena");
-        String nombre = request.getParameter("nombre");
-        String apellidos = request.getParameter("apellidos");
-        String email = request.getParameter("email");
-        String celular = request.getParameter("celular");
-        String direccion = request.getParameter("direccion");
-        double saldo = Double.parseDouble(request.getParameter("saldo"));
-        boolean premium = Boolean.parseBoolean(request.getParameter("premium"));
-
-        String usuarioStr = usuario.modificar(username, contrasena, nombre, apellidos,
-                email, celular, direccion, saldo, premium);
-
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println(usuarioStr);
-        out.flush();
-        out.close();
-    }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-     * response)
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        doGet(request, response);
-    }
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+                throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 
 }
-

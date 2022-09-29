@@ -3,7 +3,6 @@ package controller;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import com.google.gson.Gson;
-
 import beans.Usuario;
 import connection.DBConnection;
 import java.util.HashMap;
@@ -13,31 +12,21 @@ public class UsuarioController implements IUsuarioController {
 
     @Override
     public String login(String username, String contrasena) {
-
         Gson gson = new Gson();
-
-        //Creación consulta SQL:
         DBConnection con = new DBConnection();
-
         String sql = "Select * from usuario where username = '" + username
                 + "' and contrasena = '" + contrasena + "'";
 
-        //Creación de bloque try catch, el cual permite enviar información:
         try {
             Statement st = con.getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
-
             while (rs.next()) {
                 String nombre = rs.getString("nombre");
                 String apellidos = rs.getString("apellidos");
                 String email = rs.getString("email");
-                String celular = rs.getString("celular");
-                String direccion = rs.getString("direccion");
                 double saldo = rs.getDouble("saldo");
                 boolean premium = rs.getBoolean("premium");
-
-                Usuario usuario
-                        = new Usuario(username, contrasena, nombre, apellidos, email, celular, direccion, saldo, premium);
+                Usuario usuario = new Usuario(username, contrasena, nombre, apellidos, email, saldo, premium);
                 return gson.toJson(usuario);
             }
         } catch (Exception ex) {
@@ -45,24 +34,24 @@ public class UsuarioController implements IUsuarioController {
         } finally {
             con.desconectar();
         }
-
         return "false";
     }
 
     @Override
-    public String register(String username, String contrasena, String nombre, String apellidos, String email, String celular, String direccion, double saldo, boolean premium) {
+    public String register(String username, String contrasena, String nombre, String apellidos, String email,
+            double saldo, boolean premium) {
 
         Gson gson = new Gson();
 
         DBConnection con = new DBConnection();
         String sql = "Insert into usuario values('" + username + "', '" + contrasena + "', '" + nombre
-                + "', '" + apellidos + "', '" + email + "', '" + celular + "', '" + direccion + "', " + saldo + ", " + premium + ")";
+                + "', '" + apellidos + "', '" + email + "', " + saldo + ", " + premium + ")";
 
         try {
             Statement st = con.getConnection().createStatement();
             st.executeUpdate(sql);
 
-            Usuario usuario = new Usuario(username, contrasena, nombre, apellidos, email, celular, direccion, saldo, premium);
+            Usuario usuario = new Usuario(username, contrasena, nombre, apellidos, email, saldo, premium);
 
             st.close();
 
@@ -80,6 +69,7 @@ public class UsuarioController implements IUsuarioController {
 
     @Override
     public String pedir(String username) {
+
         Gson gson = new Gson();
 
         DBConnection con = new DBConnection();
@@ -95,12 +85,11 @@ public class UsuarioController implements IUsuarioController {
                 String nombre = rs.getString("nombre");
                 String apellidos = rs.getString("apellidos");
                 String email = rs.getString("email");
-                String celular = rs.getString("celular");
-                String direccion = rs.getString("direccion");
                 double saldo = rs.getDouble("saldo");
                 boolean premium = rs.getBoolean("premium");
 
-                Usuario usuario = new Usuario(username, contrasena, nombre, apellidos, email, celular, direccion, saldo, premium);
+                Usuario usuario = new Usuario(username, contrasena,
+                        nombre, apellidos, email, saldo, premium);
 
                 return gson.toJson(usuario);
             }
@@ -114,13 +103,16 @@ public class UsuarioController implements IUsuarioController {
     }
 
     @Override
-    public String modificar(String username, String nuevaContrasena, String nuevoNombre, String nuevosApellidos, String nuevoEmail, String nuevoCelular, String nuevaDireccion, double nuevoSaldo, boolean nuevoPremium) {
+    public String modificar(String username, String nuevaContrasena,
+            String nuevoNombre, String nuevosApellidos,
+            String nuevoEmail, double nuevoSaldo, boolean nuevoPremium) {
+
         DBConnection con = new DBConnection();
 
         String sql = "Update usuario set contrasena = '" + nuevaContrasena
                 + "', nombre = '" + nuevoNombre + "', "
                 + "apellidos = '" + nuevosApellidos + "', email = '"
-                + nuevoEmail + "', celular = " + nuevoCelular +"', direccion = " + nuevaDireccion + "', saldo = " + nuevoSaldo + ", premium = ";
+                + nuevoEmail + "', saldo = " + nuevoSaldo + ", premium = ";
 
         if (nuevoPremium == true) {
             sql += " 1 ";
@@ -148,6 +140,7 @@ public class UsuarioController implements IUsuarioController {
 
     @Override
     public String verCopias(String username) {
+
         DBConnection con = new DBConnection();
         String sql = "Select id,count(*) as num_copias from alquiler where username = '"
                 + username + "' group by id;";
@@ -181,7 +174,7 @@ public class UsuarioController implements IUsuarioController {
 
     @Override
     public String devolverVideojuegos(String username, Map<Integer, Integer> copias) {
-        
+
         DBConnection con = new DBConnection();
 
         try {
@@ -205,10 +198,10 @@ public class UsuarioController implements IUsuarioController {
         }
         return "false";
     }
-    
 
     @Override
     public String eliminar(String username) {
+
         DBConnection con = new DBConnection();
 
         String sql1 = "Delete from alquiler where username = '" + username + "'";
@@ -228,9 +221,10 @@ public class UsuarioController implements IUsuarioController {
 
         return "false";
     }
-
-    @Override
+    
+     @Override
     public String restarDinero(String username, double nuevoSaldo) {
+
         DBConnection con = new DBConnection();
         String sql = "Update usuario set saldo = " + nuevoSaldo + " where username = '" + username + "'";
 

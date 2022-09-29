@@ -1,23 +1,21 @@
+
 package beans;
+
 public class Usuario {
     private String username;
     private String contrasena;
     private String nombre;
     private String apellidos;
     private String email;
-    private String celular;
-    private String direccion;
-    private double saldo;
+    private Double saldo;
     private boolean premium;
 
-    public Usuario(String username, String contrasena, String nombre, String apellidos, String email, String celular, String direccion, double saldo, boolean premium) {
+    public Usuario(String username, String contrasena, String nombre, String apellidos, String email, Double saldo, boolean premium) {
         this.username = username;
         this.contrasena = contrasena;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
-        this.celular = celular;
-        this.direccion = direccion;
         this.saldo = saldo;
         this.premium = premium;
     }
@@ -62,27 +60,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public double getSaldo() {
+    public Double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
+    public void setSaldo(Double saldo) {
         this.saldo = saldo;
     }
 
@@ -96,9 +78,8 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "username=" + username + ", contrasena=" + contrasena + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + ", celular=" + celular + ", direccion=" + direccion + ", saldo=" + saldo + ", premium=" + premium + '}';
+        return "Usuario{" + "username=" + username + ", contrasena=" + contrasena + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + ", saldo=" + saldo + ", premium=" + premium + '}';
     }
-
     
     
 }
