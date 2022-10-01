@@ -1,10 +1,466 @@
-.bg-login-image{
-	background: url("../img/bg-login.jpg");
-	background-position: center;
-	background-size: cover;
-	border: 0px;
+/*===============Propiedades Globales================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    font-family:'Monserrat', sans-serif;
+    overflow-x: hidden;
 }
 
-.sizeDiv{
-	width:40vw;
+/*===============Propiedades Globales================*/
+
+/*Estilos de productos*/
+.product__img{
+  width: 100%;
+  object-fit: scale-down;
+  padding-top: 0px !Important
+}
+
+/*====== Estilo cards productos=======*/
+.principal{
+	margin-top:40px;
+	font-family: 'Roboto';
+        font-weight: bold;
+}
+/*tarjeta 1*/
+
+.card-header{
+    color: black !Important;
+    margin-bottom: 0px !Important;
+}
+
+.card-header-first{
+	margin-top:-30px;
+        height: 80px;
+	background: linear-gradient(-90deg, #BF019F, #F28A57); 
+	box-shadow:1px 5px 15px #a2a2a2;
+        margin-bottom: 0px;
+        
+        
+}
+
+.card-header-second{
+    margin-top:-30px;
+        height: 80px;
+	background: linear-gradient(-90deg, #8E2DE2, #4A00E0); 
+	box-shadow:1px 5px 15px #a2a2a2;
+    
+}
+
+.card-header-third{
+    margin-top:-30px;
+        height: 80px;
+	background: linear-gradient(-90deg, #11998e, #38ef7d); 
+	box-shadow:1px 5px 15px #a2a2a2;
+    
+}
+
+.card-header-title{
+    font-weight: bold;     
+    color: white !Important;
+    font-size: 28px !Important;
+    
+    
+}
+
+
+/*efecto shadows para todas las tarjetas*/
+.card-section{
+  
+   
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    margin-top: 20px;
+}
+/*Para el efecto sombra al pasar por encima el mouse*/
+.card-section:hover{
+	box-shadow:1px 1px 20px #d2d2d2;
+        
+}
+.card-body{
+    margin-top: 0px;
+}
+/*efecto botones*/
+.btn-neon{
+    position: relative;
+    display: inline-block;
+    padding: 2px 8px;
+    color: #D5D8DC;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.btn-neon:hover{
+    color: #FDFEFE;
+    background: #2ECC71;
+    box-shadow: 0 0 10px #2ECC71, 0 0 40px #2ECC71, 0 0 80px #2ECC71;
+    transition-delay: 0.5s;
+ 
+}
+
+.btn-neon span{
+    position: absolute;
+    display: block;
+}
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#2ECC71);
+ }
+ .btn-neon:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+ #span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#2ECC71);
+}
+ .btn-neon:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+#span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#2ECC71);
+}
+.btn-neon:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+#span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#2ECC71);
+}
+.btn-neon:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+
+
+ /*efecto imagen menu*/
+
+
+#menu li> a{
+    font-size:16px;
+    font-weight:bold;
+    color: #FDFEFE;
+}
+
+#menu form>a{
+    font-size:20px;
+    font-weight: bold;
+}
+
+
+.nav-item:hover{
+    padding: 5px 10px;
+    background: #09F16C;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    color:#FFFFFF;
+}
+
+.navbar-brand:hover{
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: all  2s ease;
+    
+}
+
+/*efecto carrusel*/   
+
+
+.carousel-item1{
+    margin-top: 30px;
+}
+
+.carousel-item1:hover{
+    padding: 2px 6px;
+    background: #F7DC6F ;
+    color: #FF4E00;
+    border-radius: 15px;
+    transition: all  0.2s ease;
+    
+   
+    
+}
+
+.carousel-item1:hover{
+    color: #FDFEFE;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 10px #FFFFFF;
+    transition-delay: 0.5s;
+}
+
+
+
+
+.carousel-item2:hover{
+    padding: 2px 6px;
+    background: #F7DC6F ;
+    color: #FF4E00;
+    border-radius: 15px;
+    transition: all  0.2s ease;
+    
+   
+    
+}
+
+.carousel-item2:hover{
+    color: #FDFEFE;
+    background: #101010;
+    box-shadow: 0 0 10px #101010, 0 0 20px #101010, 0 0 10px #101010;
+    transition-delay: 0.5s;
+}
+
+/*=====================CARDS PRESENTACION=============*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+
+.container__cards{
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+.card{
+    width: 300px;
+    margin: 10px;
+    transition: all 300ms;
+    border: none;
+
+   
+}
+
+.card:hover{
+    width: 350px;
+}
+
+.card .cover{
+    width: 100%;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .cover img{
+    width: 250px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 30px;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+    transition: all 400ms;
+}
+
+.card:hover .cover img{
+    top: 0px;
+    filter: none;
+}
+
+.card .img__back{
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+
+.card:nth-of-type(1) .img__back{
+    background-image: url(../images/bg1.jpg);
+}
+
+.card:nth-of-type(2) .img__back{
+    background-image: url(../images/bg2.jpg);
+}
+
+.card:nth-of-type(3) .img__back{
+    background-image: url(../images/bg3.jpg);
+}
+
+.card:hover .img__back{
+    bottom: -40px;
+}
+
+.card .description{
+    background: white;
+    margin-top: -10px;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    transition: all 300ms;
+}
+
+.card:hover .description{
+    padding: 40px;
+}
+
+.card .description h2{
+    margin-top: 10px;
+    color:#3366ff;
+    text-align: center;
+}
+
+.card .description p{
+    margin-top: 10px;
+    text-align: justify;
+}
+
+
+/*===================== ESTILO BOTON CARDS PRESENTACION=============*/
+/*efecto botones*/
+.btn-neon1{
+    position: relative;
+    display: inline-block;
+    padding: 2px 8px;
+    color: black;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.btn-neon1:hover{
+    color: #FDFEFE;
+    background: #5DADE2;
+    box-shadow: 0 0 10px #5DADE2, 0 0 40px #5DADE2, 0 0 80px #5DADE2;
+    transition-delay: 0.5s;
+ 
+}
+
+.btn-neon1 span{
+    position: absolute;
+    display: block;
+}
+#span5{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#5DADE2);
+ }
+ .btn-neon1:hover #span5{
+    left: 100%;
+    transition: 1s;
+}
+ #span7{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#5DADE2);
+}
+ .btn-neon1:hover #span7{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+#span6{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#5DADE2);
+}
+.btn-neon1:hover #span6{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+#span8{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#5DADE2);
+}
+.btn-neon1:hover #span8{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+/*========Diseño Footer=========*/
+.container-footer{
+    width: 100%;  
+    background: #101010;
+}
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;  
+    padding: 20px;
+}
+
+.copyright{
+    color: #C7C7C7;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.information a{
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+
+@media screen and (max-width: 1100px){
+    
+    .container-body{
+        flex-wrap: wrap;
+    }
+    
+    .colum1{
+        max-width: 100%;
+    }
+    
+    .colum2,
+    .colum3{
+        margin-top: 40px;
+    }
+}
+
+.text-reset{
+ text-decoration: none; 
+ border: none;
+}
+
+.textalineado{
+    justify-content: space-between;
 }

@@ -1,19 +1,1382 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <title>GameFlix</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <title>Gameflix</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
-        <link rel="icon" href="">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <link rel="icon" href="img/joystick.png">
+        <link rel="stylesheet" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=roboto" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     </head>
+
     <body>
+        <!-- ==================================MENU=============================================== -->    
         <header>
-            <div class="container-fluid p-5 bg-primary text-white text-center">
-                <h1>GameFlix</h1>
-            </div>
+            <nav class="navbar navbar-expand-md  navbar-dark bg-dark  " id="menu">
+                <div class="container-fluid">
+                    <a class="navbar-brand" >
+                        <img src="img/gameflix.png" alt="GameFlix" width="45" height='39'  >
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon "></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#accion">Acción</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#aventura">Aventura</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#arcade">Arcade</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#deportivo">Deportivo</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#simulacion">simulación</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#cards">CARDS</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex">
+                            <a class="btn btn-outline-success" href="login.html" role="button">LOGIN</a>         
+                            
+                        </form>
+                    </div>
+                </div>
+            </nav>
         </header>
-    </body>
+
+        <!-- ==================================SLIDER IMAGENES=================================== -->
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="img/banner1.jpg" class="d-block w-100" alt="banner1">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="img/banner2.jpg" class="d-block w-100" alt="banner2">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="img/banner3.jpg" class="d-block w-100" alt="banner3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- ==================================INTRO=================================== -->
+
+        <div class="container-fluid bg-success d-flex justify-content-center border-top border-3">
+            <h3 class="text-light mb-0 p-3 ">Quienes somos...</h3>
+        </div>
+        <section class="w-80 mx-auto text-center pt-2" id="intro">
+            <h1 class="p-3 fs-2 border-top border-3"> Un sitio Web donde encontraras los mejores juegos de  <span class="text-success text-center" > Nintendo Switch </span></h1>
+            <p class="p-3 fs-3 text-justify"> Aquí te alquilaremos los mejores juegos de Nintendo Switch, con los títulos más reconocidos por cada género, a un precio ideal, para que puedas disfrutar y divertirte con tus amigos !!!</p>
+        </section>
+
+        <!-- ==================================productos oficial=================================== -->
+
+        <div class="container-fluid bg-success d-flex justify-content-center border-top border-3">
+            <h3 class="text-light mb-0 p-3 ">CATALOGO</h3>
+        </div>
+
+        <!-- ==================================Accion=================================== -->
+
+        <div id="accion" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner ">
+            <div class="carousel-item2  active" data-bs-interval="3000">
+                <img src="img/banner13.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>     
+
+        <div class=" container principal container-center">
+            <div class="row"> 
+                <div class="col-lg-12 text-center">
+                    <div class="row">
+                        <!--juego 1-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">MONSTER HUNTER</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/1.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-5">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 2-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">DIABLO II </h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/2.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 3-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3 ">BAYONETTA 2</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/3.png" alt="" class="product__img">        
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 4-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">METROID DREAD</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/4.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 5-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">WARFRAME</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/5.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 6-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">DOOM</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/6.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 7-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">BLOODSTAINED</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/7.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 8-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">DARK SOULS</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/8.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 9-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">RESIDENT EVIL 2</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/accion/9.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================Aventura=================================== -->
+
+        <div id="aventura" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item1 active" data-bs-interval="3000">
+                <img src="img/banner9.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>     
+
+        <div class=" container principal  container-center">
+            <div class="row"> 
+                <div class="col-lg-12 text-center">
+                    <div class="row">
+                        <!--juego 1-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">LUIGI´S MANSION 3</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/1.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-5">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 2-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">PAPER MARIO</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/2.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 3-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">THE LEGEND OF ZELDA</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/3.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 4-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">lEYENDAS POKEMON</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/4.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 5-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">RIME</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/5.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 6-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">NO MORE HERO 2</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/6.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 7-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">BLASTER MASTER</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/7.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 8-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">CAPTAIN TOAD</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/8.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 9-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">L.A NOIRE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/aventura/9.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================Arcade=================================== -->
+
+        <div id="arcade" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item1 active" data-bs-interval="3000">
+                <img src="img/banner8.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>     
+
+        <div class=" container principal  container-center">
+            <div class="row"> 
+                <div class="col-lg-12 text-center">
+                    <div class="row">
+                        <!--juego 1-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">SUPER SMASH BROS.ULTIMATE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/1.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-5">
+                                        <span id="span1"></span>Ultimate
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 2-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">CUPHEAD</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/2.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 3-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">SHOVEL KNIGHT</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/3.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 4-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">IKAGURA</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/4.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 5-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">RIVER CITY GIRLS</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/5.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 6-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">SCOTT PILGRIM</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/6.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 7-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">STREET FIGHTER</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/7.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 8-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">SNOW BROS</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/8.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 9-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">SUPER BOMBERMAN</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/arcade/9.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================Deportivo=================================== -->
+
+        <div id="deportivo" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item1 active" data-bs-interval="3000">
+                <img src="img/banner10.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>     
+
+        <div class=" container principal  container-center">
+            <div class="row"> 
+                <div class="col-lg-12 text-center">
+                    <div class="row">
+                        <!--juego 1-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">ROCKET LEAGUE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/1.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-5">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 2-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">NBA 2K18 </h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/2.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 3-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">MARIO TENIS</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/3.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 4-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">FIFA 21</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/4.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 5-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">RING FIT ADVENTURE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/5.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 6-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">MARIO STRIKE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/6.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 7-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">MARIO GOLF</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/7.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 8-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">FIFA 22</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/8.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 9-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">BIG RUMBLE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/deportivo/9.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================Simulacion=================================== -->
+
+        <div id="simulacion" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item1 active" data-bs-interval="3000">
+                <img src="img/banner12.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>     
+
+        <div class=" container principal  container-center">
+            <div class="row"> 
+                <div class="col-lg-12 text-center">
+                    <div class="row">
+                        <!--juego 1-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">JUST DANCE 2022</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/1.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-5">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 2-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">ANIMAL CROSSING</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/2.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 3-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">STARDEW VALLEY</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/3.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 4-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">DORAEMON STORY</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/4.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 5-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">SNOW RUNNNER</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/5.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 6-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">GOAT SIMULATOR</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/6.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 7-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">TWO POINT HOSPITAL</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/7.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 8-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">FARMING SIMULATOR</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/8.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 9-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">DISNEY DREAMLIGHT</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/simulacion/9.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================Carreras=================================== -->
+
+        <div id="carreras" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item1 active" data-bs-interval="3000">
+                <img src="img/banner11.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>     
+
+        <div class=" container principal  container-center border-bottom">
+            <div class="row"> 
+                <div class="col-lg-12 text-center">
+                    <div class="row">
+                        <!--juego 1-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">MARIO KART 8 DELUXE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/1.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-5">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 2-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">NEED FOR SPEED</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/2.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 3-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">CRASH BANDICOOT 4</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/3.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 4-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">MOTO GP 18</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/4.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 5-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">WRC 10</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/5.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 6-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">REDOUT</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/6.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--juego 7-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-first rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">SONIC FRONTIERS</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/7.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--juego 8-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-second rounded pb-2">
+                                    <h2 class="card-header-title text-white pt-2 fs-3">GRIP COMBAT RACING</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/8.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--juego 9-->
+                        <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                            <div class="card-section border rounded p-3">
+                                <div class="card-header-third rounded pb-2">
+                                    <h2 class="card-header-title text-white  pt-2 fs-3">BURNOUT PARADISE</h2>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/juegos/carreras/9.png" alt="" class="product__img">
+                                    <a href="#" class="btn btn-neon border-top border-3">
+                                        <span id="span1"></span>
+                                        <span id="span2"></span>
+                                        <span id="span3"></span>
+                                        <span id="span4"></span>
+                                        RESERVAR</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================CARDS DE PRESENTACION=================================== -->   
+
+        <div id="cards" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner ">
+            <div class="carousel-item1 active" data-bs-interval="3000">
+                <img src="img/banner14.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>
+
+        <div class="container__cards border-bottom">
+
+            <div class="card">
+                <div class="cover">
+                    <img src="img/diego4.png" alt="">
+                    <div class="img__back"></div>
+                </div>
+                <div class="description text-center">
+                    <h2>Diego Alejandro Zamora Díaz</h2>
+                    <p>Tripulande de la UTP, mision Tic 2022, Grupo 48.
+                        Desarrollador Front y Tester</p>
+                    <a href="https://www.facebook.com/DIeGO.ZAmoRA.D/" class="btn btn-neon1 border-top border-3">
+                        <span id="span5"></span>
+                        <span id="span6"></span>
+                        <span id="span7"></span>
+                        <span id="span8"></span>
+                        Leer Más</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cover">
+                    <img src="img/cami4.png" alt="">
+                    <div class="img__back"></div>
+                </div>
+                <div class="description text-center">
+                    <h2>Maria Camila Zamora Díaz</h2>
+                    <p> Tripulande de la UTP, Mision Tic 2022, Grupo 71.
+                        Scrum master y desarrollador Backend.</p>
+                    <a href="https://www.facebook.com/mariacamila.zamoradiaz" class="btn btn-neon1 border-top border-3">
+                        <span id="span5"></span>
+                        <span id="span6"></span>
+                        <span id="span7"></span>
+                        <span id="span8"></span>
+                        Leer Más</a>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cover">
+                    <img src="img/carlos4.png" alt="">
+                    <div class="img__back"></div>
+                </div>
+                <div class="description text-center">
+                    <h2>Carlos Stiven Roldan Díaz</h2>
+                    <p>Tripulande de la UTP, mision Tic 2022, Grupo 69.
+                        Analista y Diseñador Base de Datos.</p>
+                    <a href="https://www.facebook.com/estiven.diaz.5" class="btn btn-neon1 border-top border-3">
+                        <span id="span5"></span>
+                        <span id="span6"></span>
+                        <span id="span7"></span>
+                        <span id="span8"></span>
+                        Leer Mas</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-inner border-top-5">
+            <div class="carousel-item active" data-bs-interval="3000" >
+                <img  src="img/mapa.jpg" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>   
+
+
+
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-white text-muted">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 link-secondary">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3 text-secondary"></i>GameFlix
+
+                            </h6>
+                            <p class=" textalineado">
+                                Esta compañia se destaca por el alquiler de juegos para nintendo Switch, teniendo en cuenta que los costos de los mismos son
+                                elevados, por tanto aqui encontraras, los juegos más populares y los podras jugar, por el tiempo que desees y a un bajo costo.
+                                .
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class=" col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                TECNOLOGIAS
+                            </h6>
+                            <p class="decoracion">
+                                <a href="#!" class="text-reset">BootStrap</a>
+                            </p>
+                            <p calss="decoracion">
+                                <a href="#!" class="text-reset">Java</a>
+                            </p>
+                            <p class="decoracion">
+                                <a href="#!" class="text-reset">JavaScript</a>
+                            </p>
+                            <p class="decoracion">
+                                <a href="#!" class="text-reset">HTML</a>
+                            </p>
+
+                            <p class="decoracion">
+                                <a href="#!" class="text-reset">CSS</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                PRODUCTOS
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Accion</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Aventura</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Arcade</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Deportivo</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Simulacion</a>
+                            </p>
+                            <p>
+                                <a  class="text-reset">Carreras</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">CONTACTOS</h6>
+                            <p><i class="fas fa-home me-3 text-secondary"></i> Bogota.Clle 73c. sur #77k-51</p>
+                            <p>
+                                <i class="fas fa-envelope me-3 text-secondary"></i>
+                                GameFlix@gmail.com
+                            </p>
+                            <p><i class="fas fa-phone me-3 text-secondary"></i> + 57 3202758838</p>
+                            <p><i class="fas fa-print me-3 text-secondary"></i> + 57 234 567 89</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+        </footer>
+        <!-- Footer -->
+    </footer>
+
+    <div class="container-footer">
+        <div class="footer">
+            <div class="copyright">
+                © 2022 Todos los Derechos Reservados | <a href="">GameFlix</a>
+            </div>
+
+            <div class="information">
+                <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+
 </html>
