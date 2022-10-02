@@ -1,8 +1,141 @@
+
+body{
+    background-image: url(../img/mario.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-attachment: fixed;
+}
 .bg-login-image{
+ 
 	background: url("../img/pikachu.png");
-	background-position: center;
 	background-size: cover;
-	border: 0px;
-       
+	background-repeat: no-repeat;
+	background-position: center;
+
 }
 
+#BTNENTRAR{
+    margin-top: 10px;
+    color:white;
+    background: #0B96F3 ;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    
+}
+
+.clase-body{
+	background-image: url(../img/mario.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	
+
+}
+
+.card-body{
+	background-image: url(../img/mario.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+
+}
+
+h1{
+  
+    color:white;
+    font-size: 50px;
+    border-radius: 15px;
+    text-align: center;
+    letter-spacing: 0.15em;
+   
+  
+    
+}
+
+.container{
+    padding-bottom:20px;
+
+}
+
+.cont1{
+    padding: 40px;
+}
+
+.navbar{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+
+a{
+    font-size:30px;
+    font-weight:bold;
+    color: #FDFEFE;
+}
+
+.nav-item:hover{
+    padding: 5px 10px;
+    background: #09F16C;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    color:#FFFFFF;
+}
+
+.navbar-brand:hover{
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: all  2s ease;
+    
+}
+
+/*Efecto en el hello*/
+.container span {
+  font-size: 60pt;
+  font-weight: bold;
+  position: relative;
+  font-family: "Fredoka One";
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.container span::before {
+  content: var(--l);
+  position: absolute;
+  transform: scale(1.1);
+  filter: blur(30px);
+}
+.container span::after {
+  content: var(--l);
+  position: absolute;
+  height: 50%;
+  width: 300px;
+  top: 50%;
+  left: 0;
+  filter: blur(30px);
+  transform: rotateX(50deg);
+}
+.container span:hover {
+  filter: contrast(250%);
+}
+.container span:nth-child(1) {
+  color: #00bef8;
+}
+.container span:nth-child(2) {
+  color: #ff0697;
+}
+.container span:nth-child(3) {
+  color: #ff4d00;
+}
+.container span:nth-child(4) {
+  color: #ffe600;
+}
+.container span:nth-child(5) {
+  color: #bb00ff;
+}
