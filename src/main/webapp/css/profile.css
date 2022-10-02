@@ -5,3 +5,18 @@
 #form-container{
 	width:40vw;
 }
+
+
+
+#historial-reservas{
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+#historial-table{
+    padding-left: 100px
+}
+
+#tablacentrada{
+    width: 80%;
+}

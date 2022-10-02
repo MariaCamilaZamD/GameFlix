@@ -7,3 +7,21 @@
 #ordenar-genero{
 	cursor:pointer;
 }
+
+.navbar{
+    z-index: 1000;
+}
+
+#menu li> a{
+    font-size:16px;
+    font-weight:bold;
+    color: #FDFEFE;
+}
+
+.navbar1:hover{
+    padding: 5px 10px;
+    background: #09F16C;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    color:#FFFFFF;
+}

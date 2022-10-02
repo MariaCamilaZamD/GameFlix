@@ -1,3 +1,61 @@
 .sizeDiv{
 	width:40vw;
 }
+
+body{
+    background-image: url(../img/fondo3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-attachment: fixed;
+}
+.clase-body{
+	background-image: url(../img/fondo3.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	
+
+}
+
+.card-body{
+	background-image: url(../img/fondo3.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+        color: white;
+        font-size: 25px;
+        
+
+}
+
+.label{
+    color:white;
+}
+
+.navbar{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+
+a{
+    font-size:30px;
+    font-weight:bold;
+    color: #FDFEFE;
+    text-decoration: none;
+}
+
+.nav-item:hover{
+    padding: 5px 10px;
+    background: #067DF3;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    color:#FFFFFF;
+}

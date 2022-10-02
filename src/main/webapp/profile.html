@@ -36,10 +36,20 @@
             </div>
         </nav>
 
-        <main class="p-4 d-flex flex-column align-items-center">
-            <h1>Historial de reservas</h1>
 
-            <table class="table d-none" id="historial-table">
+        <main class=" d-flex flex-column align-items-center">
+
+            <h1 class="fw-bold text-acces fs-2">Historial de reservas</h1>
+            <div id="cards" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            </div>
+            <div class="carousel-inner ">
+                <div class="carousel-item1 active" data-bs-interval="3000">
+                    <img src="img/banner17.png" class="d-block w-100" alt="banner1">
+                </div> 
+            </div>
+
+    
+                            <table class="table d-none" id="historial-table">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
@@ -55,8 +65,8 @@
             </table>
             <div id="historial-vacio" class="alert alert-info" role="alert">No hay elementos en el historial</div>
 
-            <h1 class="mt-3">Editar perfil</h1>
 
+            <h1 class="mt-3">Editar perfil</h1>
             <div class="card" id="form-container">
                 <div class="card-body">
                     <form method="GET" id="form-modificar" class="pb-4">

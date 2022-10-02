@@ -23,11 +23,12 @@
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="css/home.css" />
         <title>Inicio</title>
+        <link rel="icon" href="img/joystick.png">
     </head>
     <body>
 
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand p-2" href="index.html">Inicio</a>
+            <a class="navbar-brand p-3 fw-bold fs-2" href="index.html">Inicio</a>
             <div id="user-data-profile">
                 <span class="badge badge-light mr-3" id="user-saldo"></span>
                 <div class="btn-group">
@@ -42,7 +43,15 @@
                 </div>
             </div>
         </nav>
-        <main class="p-4 d-flex justify-content-center">
+
+        <div id="cards" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        </div>
+        <div class="carousel-inner ">
+            <div class="carousel-item1 active" data-bs-interval="3000">
+                <img src="img/banner16.png" class="d-block w-100" alt="banner1">
+            </div> 
+        </div>
+        <main class=" d-flex  justify-content-center">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
